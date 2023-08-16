@@ -1,57 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-  </head>
-  <body>
-    <%- include('./layout/header'); -%>
 
-    <h1 class="index-title">我是首頁</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7TAO活動訂票網</title>
+  <!-- fontawesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/cat.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
-      </div>
-    </div>
+<body>
+  <%- include('./layout/header'); -%>
+    <main class="mt-32">
+      <section class="index__banner">
+        <div class="container-md">
+          <div class="row">
+            <div class="col-12">
+              <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <picture>
+                      <source media="(min-width:576px)" srcset="../assets/images/indexbanner.png">
+                      <img src="../assets/images/indexbanner-sm.png" alt="沒有草東的派對banner照片" class="img-fluid w-100">
+                    </picture>
+                    <div class="carousel-caption  carousel-caption--date text-white text-start p-0 pe-none">
+                      <h3 class="mb-0">19 MAY<br class="d-block d-md-none"> 2023</h3>
+                    </div>
+                    <div class="carousel-caption  carousel-caption--content p-0 pe-none">
+                      <h4 class="mb-0 mb-lg-3">隔牆有耳-沒有草東的派對</h4>
+                      <p class="mb-0 d-none d-lg-block">
+                        你各位聽團仔們！每次想跟朋友一起聽草東專場卻每一次都搶不到票？「草東沒有派對」永遠都是「草東沒有門票」！
+                      </p>
+                      <p class="mb-0 d-none d-lg-block">
+                        帶上啤酒、野餐墊，讓我們在Live House外面一起開場「沒有草東的派對」吧！
+                      </p>
 
-    <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">確定</button>
+                    </div>
+                  </div>
+                  <!-- <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Second slide label</h5>
+                      <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Third slide label</h5>
+                      <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                  </div> -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <%- include('./layout/footer'); -%>
+      <!-- 六個正方形方塊的篩選列 -->
+      <section class="index__filters mt-32 mt-md-5">
+        <div class="container-md">
+          <div class="row">
+            <div class="col-4 col-sm-2 mb-2 mb-sm-0">
+              <a href="#">
+                <div class="l-square">
+                  <div
+                    class="border border-2 border-primary l-square__content d-flex align-items-center justify-content-center flex-column">
+                    <img src="../assets/images/music.png" alt="" class="">
+                    <p class="mb-0">演出</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-sm-2 mb-2 mb-sm-0">
+              <a href="#">
+                <div class="l-square">
+                  <div
+                    class="border border-2 border-primary l-square__content d-flex align-items-center justify-content-center flex-column">
+                    <img src="../assets/images/heart.png" alt="" class="">
+                    <p class="mb-0">聯誼</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-sm-2 mb-2 mb-sm-0">
+              <a href="#">
+                <div class="l-square">
+                  <div
+                    class="border border-2 border-primary l-square__content d-flex align-items-center justify-content-center flex-column">
+                    <img src="../assets/images/museum.png" alt="" class="">
+                    <p class="mb-0">聯誼</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-sm-2">
+              <a href="#">
+                <div class="l-square">
+                  <div
+                    class="border border-2 border-primary l-square__content d-flex align-items-center justify-content-center flex-column">
+                    <img src="../assets/images/cutlery.png" alt="" class="">
+                    <p class="mb-0">美食</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-sm-2">
+              <a href="#">
+                <div class="l-square">
+                  <div
+                    class="border border-2 border-primary l-square__content d-flex align-items-center justify-content-center flex-column">
+                    <img src="../assets/images/snowed-mountains.png" alt="" class="">
+                    <p class="mb-0">戶外</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4 col-sm-2">
+              <a href="#">
+                <div class="l-square">
+                  <div
+                    class="border border-2 border-primary l-square__content d-flex align-items-center justify-content-center flex-column searchMore">
+                    <p class="mb-0">探索</p>
+                    <p class="mb-0">更多</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
+
+      <!-- Recent -->
+      <section class="index__recent mt-32 mt-md-5">
+        <!-- Recent__滿版近期活動 -->
+        <div class="index__recent__title container-md">
+          <div
+            class="d-flex justify-content-between align-items-center py-3 px-12 py-md-4 px-md-32 border border-3 border-primary pe-none">
+            <h2 class="mb-0">RECENT</h2>
+            <p class="mb-0">近期活動</p>
+          </div>
+        </div>
+        <!-- Recent__卡片區塊 -->
+        <div class="index__recent__cards container-md mt-4 mt-md-32">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+              <!-- card1 -->
+              <div class="card bg-transparent border-0 pb-4 pb-md-5 h-100">
+                <div class="card-header bg-transparent border-primary border-3 border-bottom p-0">
+                  <h3 class="mb-12 display-5">19 MAY 2023</h3>
+                </div>
+                <div class="card-body p-0 pt-3 pt-md-12 pb-3 border-bottom border-3 border-primary">
+                  <img src="../assets/images/event/fig1.png" alt="" class="img-fluid">
+                  <h4 class="mb-0 lh-base fw-bold mt-2 mt-md-12">邪典電影派對——房間</h4>
+                  <p class="mb-0 mt-2 mt-md-12 notoSans">你有聽說過「大災難家」裡面的主角 Tommy Wiseau
+                    製作的「史上最爛的電影」——房間嗎？在美國甚至演變成一種邪教、一種派對的形式，在電影播放的對著螢幕丟湯匙都...</p>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between align-items-center p-0 bg-transparent border-0 border-bottom border-3 border-primary rounded-0 py-12">
+                  <a href="#" class="d-flex card-footer__filterTag align-items-center justify-content-start">
+                    <img src="../assets/images/sparkler.png" alt="" class="">
+                    <p class="mb-0 ms-1">社群活動</p>
+                  </a>
+                  <a href="#" class="d-flex card-footer__state align-items-center">
+                    <p class="mb-0 me-1">開賣中</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <!-- card2 -->
+              <div class="card bg-transparent border-0 pb-4 pb-md-5 h-100">
+                <div class="card-header bg-transparent border-primary border-3 border-bottom p-0">
+                  <h3 class="mb-12 display-5">23 MAY 2023</h3>
+                </div>
+                <div class="card-body p-0 pt-3 pt-md-12 pb-3 border-bottom border-3 border-primary">
+                  <img src="../assets/images/event/fig2.png" alt="" class="img-fluid">
+                  <h4 class="mb-0 lh-base  fw-bold mt-2 mt-md-12">怪舞俱樂部</h4>
+                  <p class="mb-0 mt-2 mt-md-12 notoSans">
+                    覺得自己的舞蹈細胞異於常人？每次隨著音樂起舞身邊的人總是露出無法理解的表情？來這裡就對了！來參加這場一起跳舞的聚會，也會在每一次的舞會中選出舞步最怪的...</p>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between align-items-center p-0 bg-transparent border-0 border-bottom border-3 border-primary rounded-0 py-12">
+                  <a href="#" class="d-flex card-footer__filterTag align-items-center justify-content-start">
+                    <img src="../assets/images/sparkler.png" alt="" class="">
+                    <p class="mb-0 ms-1">演出</p>
+                  </a>
+                  <a href="#" class="d-flex card-footer__state align-items-center">
+                    <p class="mb-0 me-1">檢視活動</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <!-- card3 -->
+              <div class="card bg-transparent border-0 pb-4 pb-md-5 h-100">
+                <div class="card-header bg-transparent border-primary border-3 border-bottom p-0">
+                  <h3 class="mb-12 display-5">30 MAY 2023</h3>
+                </div>
+                <div class="card-body p-0 pt-3 pt-md-12 pb-3 border-bottom border-3 border-primary">
+                  <img src="../assets/images/event/fig3.png" alt="" class="img-fluid">
+                  <h4 class="mb-0 lh-base  fw-bold mt-2 mt-md-12">哈利波特馬拉松</h4>
+                  <p class="mb-0 mt-2 mt-md-12 notoSans">
+                    每次身邊有人開啟哈利波特的話題，自己永遠都是聽不懂的那個麻瓜？看大家在討論魁地奇、用咒語鬥法的時候，自己永遠是陪笑的那個人？穿好你的法袍、帶上你的法杖...</p>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between align-items-center p-0 bg-transparent border-0 border-bottom border-3 border-primary rounded-0 py-12">
+                  <a href="#" class="d-flex card-footer__filterTag align-items-center justify-content-start">
+                    <img src="../assets/images/sparkler.png" alt="" class="">
+                    <p class="mb-0 ms-1">聯誼</p>
+                  </a>
+                  <a href="#" class="d-flex card-footer__state align-items-center">
+                    <p class="mb-0 me-1">開賣中</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <!-- card4 -->
+              <div class="card bg-transparent border-0 pb-4 pb-md-5 pb-lg-0 h-100">
+                <div class="card-header bg-transparent border-primary border-3 border-bottom p-0">
+                  <h3 class="mb-12 display-5">12 June 2023</h3>
+                </div>
+                <div class="card-body p-0 pt-3 pt-md-12 pb-3 border-bottom border-3 border-primary">
+                  <img src="../assets/images/event/fig4.png" alt="" class="img-fluid">
+                  <h4 class="mb-0 lh-base  fw-bold mt-2 mt-md-12">皮卡丘排球大賽</h4>
+                  <p class="mb-0 mt-2 mt-md-12 notoSans">
+                    還記得小時候玩的小遊戲嗎？總是有朋友吹噓自己獨孤求敗、只求一敗？是時候該展現真正的實力了！本活動採用瑞士制賽程，以絕對公平的方式進行，是時候該證明自己...</p>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between align-items-center p-0 bg-transparent border-0 border-bottom border-3 border-primary rounded-0 py-12">
+                  <a href="#" class="d-flex card-footer__filterTag align-items-center justify-content-start">
+                    <img src="../assets/images/sparkler.png" alt="" class="">
+                    <p class="mb-0 ms-1">遊戲競賽</p>
+                  </a>
+                  <a href="#" class="d-flex card-footer__state align-items-center">
+                    <p class="mb-0 me-1">開賣中</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <!-- card5 -->
+              <div class="card bg-transparent border-0 pb-4 pb-md-0 h-100">
+                <div class="card-header bg-transparent border-primary border-3 border-bottom p-0">
+                  <h3 class="mb-12 display-5">25 June 2023</h3>
+                </div>
+                <div class="card-body p-0 pt-3 pt-md-12 pb-3 border-bottom border-3 border-primary">
+                  <img src="../assets/images/event/fig5.png" alt="" class="img-fluid">
+                  <h4 class="mb-0 lh-base  fw-bold mt-2 mt-md-12">酒精路跑</h4>
+                  <p class="mb-0 mt-2 mt-md-12 notoSans">
+                    身邊總是有對自己酒量有高度自信的朋友嗎？拉著他/她一起來參加酒精路跑吧！一起拍下第一杯直到倒下為止的照片，一起喝遍市區內各家極具品味的酒吧。 </p>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between align-items-center p-0 bg-transparent border-0 border-bottom border-3 border-primary rounded-0 py-12">
+                  <a href="#" class="d-flex card-footer__filterTag align-items-center justify-content-start">
+                    <img src="../assets/images/sparkler.png" alt="" class="">
+                    <p class="mb-0 ms-1">社群活動</p>
+                  </a>
+                  <a href="#" class="d-flex card-footer__state align-items-center">
+                    <p class="mb-0 me-1">開賣中</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <!-- card6 -->
+              <div class="card bg-transparent border-0 pb-4 pb-md-0 h-100">
+                <div class="card-header bg-transparent border-primary border-3 border-bottom p-0">
+                  <h3 class="mb-12 display-5">9 July 2023</h3>
+                </div>
+                <div class="card-body p-0 pt-3 pt-md-12 pb-3 border-bottom border-3 border-primary">
+                  <img src="../assets/images/event/fig6.png" alt="" class="img-fluid">
+                  <h4 class="mb-0 lh-base  fw-bold mt-2 mt-md-12">展覽——我的房間</h4>
+                  <p class="mb-0 mt-2 mt-md-12 notoSans">
+                    每個人的房間總會有那麼一兩個能代表自己的物事，或許是再平凡不過的牙刷、馬克杯，或許有那些別人的房間從沒出現過的小東西——那些能定義自己的特別的東西。</p>
+                </div>
+                <div
+                  class="card-footer d-flex justify-content-between align-items-center p-0 bg-transparent border-0 border-bottom border-3 border-primary rounded-0 py-12">
+                  <a href="#" class="d-flex card-footer__filterTag align-items-center justify-content-start">
+                    <img src="../assets/images/sparkler.png" alt="" class="">
+                    <p class="mb-0 ms-1 fw-bold">展覽</p>
+                  </a>
+                  <a href="#" class="d-flex card-footer__state align-items-center">
+                    <p class="mb-0 me-1 fw-bold">開賣中</p>
+                    <i class="fa-solid fa-angles-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+
+
+    <!-- main.js 注入點 -->
     <script type="module" src="../main.js"></script>
-  </body>
+    <script>
+      let stateIcons = document.querySelectorAll('.card-footer__state');
+      stateIcons.forEach((item) => {
+        item.addEventListener('mouseover', function () {
+          this.lastElementChild.classList.add('fa-beat-fade');
+          // console.log(this.lastElementChild);
+        })
+        item.addEventListener('mouseleave', function () {
+          this.lastElementChild.classList.remove('fa-beat-fade');
+        })
+      })
+
+    </script>
+</body>
+
 </html>

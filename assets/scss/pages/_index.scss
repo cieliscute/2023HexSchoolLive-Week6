@@ -1,3 +1,206 @@
-.index-title {
-  font-size: 100px;
+.index__banner {
+  .carousel-caption--date {
+    top: 16px;
+    left: 40px;
+    bottom: unset;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    @include desktop {
+      top: 48px;
+      left: 48;
+
+      h3 {
+        font-size: 60px;
+      }
+    }
+  }
+
+  .carousel-caption--content {
+    left: 0px;
+    right: 0px;
+    bottom: 24px;
+
+    h4 {
+      font-size: 18px;
+    }
+
+    @include desktop {
+      h4 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .carousel-control-prev {
+    width: 40px;
+
+    @include pad {
+      width: 112px;
+    }
+  }
+
+  .carousel-control-next {
+    width: 40px;
+
+    @include pad {
+      width: 112px;
+    }
+  }
+}
+
+.index__filters {
+  .l-square__content {
+    img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 8px;
+
+      @include phone {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 4px;
+      }
+
+      @include pad {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 8px;
+      }
+
+      @include desktop {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 12px;
+      }
+    }
+
+    &:hover {
+      @include desktop {
+        top: -5px;
+      }
+    }
+  }
+
+  .searchMore {
+    background-color: $primary;
+    color: $secondary;
+    font-style: 24px;
+
+    @include desktop {
+      font-size: 36px;
+    }
+  }
+}
+
+
+.index__recent {
+  .index__recent__title {
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    @include desktop {
+      h2 {
+        font-size: 64px;
+      }
+
+      p {
+        font-size: 32px;
+      }
+    }
+  }
+
+  /*.index__recent__cards .card START */
+  .card-header {
+    h3 {
+      font-size: 32px;
+
+      @include pad {
+        font-size: 40px;
+      }
+
+      @include respond-to('min-width:1200px') {
+        font-size: 48px;
+      }
+    }
+  }
+
+  .card-body {
+    img{
+      object-fit: contain;
+      max-width: unset;
+      width: 100%;
+    }
+    h4 {
+      font-style: 18px;
+
+      @include pad {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .card-footer__filterTag {
+    img {
+      width: 20px;
+      height: 20px;
+
+      @include desktop {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    // hover effect
+    p{
+      position: relative;
+    }
+    p::before{
+      position: absolute;
+      content: "";
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      // 線條粗細
+      height: 2px;
+      background-color:$primary;
+      transform: scaleX(0);
+      transform-origin: bottom center;
+      transition: .3s transform ease-in-out;
+    }
+    &:hover{
+      p::before{
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .card-footer__state {
+    position: relative;
+
+    .fa-solid {
+      line-height: 1.5;
+    }
+
+    &:hover::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 30px;
+      height: 30px;
+      left: -15px;
+      background-color: $secondary;
+      border-radius: 50%;
+      transform: translate(2px, -3px);
+    }
+  }
+
+  /*.index__recent__cards .card END */
 }

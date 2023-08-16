@@ -1,0 +1,22 @@
+@mixin desktop{
+  @media(min-width:map-get($grid-breakpoints,lg)){
+    @content;
+  }
+}
+@mixin pad {
+  @media(min-width:map-get($grid-breakpoints,md)) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media(min-width:map-get($grid-breakpoints,sm)) {
+    @content;
+  }
+}
+
+@mixin respond-to($media) {
+  @media ($media) {
+    @content;
+  }
+}

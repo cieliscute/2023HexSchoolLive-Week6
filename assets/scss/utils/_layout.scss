@@ -1,0 +1,49 @@
+.notoSerif {
+  font-family: 'Noto Serif TC';
+}
+
+.notoSans {
+  font-family: 'Noto Sans TC';
+}
+
+.Yeseva {
+  font-family: 'Yeseva One';
+}
+
+
+
+.l-square {
+  position: relative;
+}
+
+.l-square::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.l-square__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.l-16-9 {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: percentage(9/16);
+  }
+  &__content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+}

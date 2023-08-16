@@ -1,11 +1,25 @@
+// icon
+@import './base/icofont.min.css';
+// 要使用變數需要先使用function
 @import "../../node_modules/bootstrap/scss/functions";
+// 自定義變數
 @import './utils/variables';
+// bootstrap本體
+@import '../../node_modules/bootstrap';
+// 自己的mixins
+@import './utils/mixins';
 
 
-@import './layout/header.scss';
-@import './layout/footer.scss';
+@import './utils/layout';
+@import './pages/layout/header';
 
 
 @import './pages/index.scss';
 
-@import "../../node_modules/bootstrap";
+* {
+  // outline: 1px solid red;
+}
+
+img[alt=""] {
+  // outline: 10px solid red;
+}
