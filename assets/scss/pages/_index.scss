@@ -263,43 +263,118 @@
 
 
 .index__albumsCards {
-  img{
+  img {
     transition: all .3s ease-in-out;
   }
-  a:hover{
-    img{
+
+  h3 {
+    transition: all .3s ease-in-out;
+  }
+
+
+  a:hover {
+    img {
       transform: scale(1.2);
     }
-    h3{
-      color:#9C9E18;
+
+    h3 {
+      color: #9C9E18;
     }
   }
-  
+
   .card {
     position: relative;
+
     h3 {
       font-size: 18px;
     }
 
   }
-  .card--rotate--clockWise{
+
+  .card--rotate--clockWise {
     transform: rotate(2deg);
-    
+
   }
-  .card--rotate--counterClockWise{
+
+  .card--rotate--counterClockWise {
     transform: rotate((-2deg));
   }
 }
 
 
-.index__followUs{
-  /*.card */
-  .card-header{
-    h2{
+.index__followAndSubscribe {
+  .wrap{
+    border: 0px solid $primary;
+  }
+  .wrap1{
+    border-width: 2px;
+    @include desktop{
+      border-width: 2px 1px 2px 2px;
+    }
+  }
+  .wrap2{
+    border-width: 2px;
+    @include desktop{
+      border-width: 2px 2px 2px 1px;
+    }
+  }
+  .card-header {
+    h2 {
       font-size: 24px;
-      @include desktop{
+
+      @include desktop {
         font-size: 36px;
       }
     }
+  }
+
+  /*.card-body ul.links*/
+  .links__item {
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+    i {
+      color: #fff;
+      transition: color .3s ease-in-out;
+    }
+    p{
+      color:#000;
+      transition:  color .3s ease-in-out;
+    }
+
+    &:hover {
+      i {
+        color: #9C9E18;
+      }
+
+      p {
+        color: #9C9E18;
+      }
+    }
+  }
+
+  form{
+    [type="email"]{
+      border: 2px solid $primary;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left: 24px;
+      &::placeholder{
+        font-family: "Noto Sans TC";
+      }
+    }
+  }
+}
+
+.index__slogan{
+  h3{
+    font-size: 18px;
+    @include pad{
+      font-size: 32px;
+    }
+  }
+  p{
+    font-size: 14px;
   }
 }
