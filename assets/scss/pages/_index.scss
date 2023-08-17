@@ -134,11 +134,12 @@
   }
 
   .card-body {
-    img{
+    img {
       object-fit: contain;
       max-width: unset;
       width: 100%;
     }
+
     h4 {
       font-style: 18px;
 
@@ -158,11 +159,13 @@
         height: 24px;
       }
     }
+
     // hover effect
-    p{
+    p {
       position: relative;
     }
-    p::before{
+
+    p::before {
       position: absolute;
       content: "";
       left: 0px;
@@ -170,13 +173,14 @@
       bottom: 0px;
       // 線條粗細
       height: 2px;
-      background-color:$primary;
+      background-color: $primary;
       transform: scaleX(0);
       transform-origin: bottom center;
       transition: .3s transform ease-in-out;
     }
-    &:hover{
-      p::before{
+
+    &:hover {
+      p::before {
         transform: scaleX(1);
       }
     }
@@ -203,4 +207,99 @@
   }
 
   /*.index__recent__cards .card END */
+}
+
+.index__online {
+  .index__online__title {
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    @include desktop {
+      h2 {
+        font-size: 64px;
+      }
+
+      p {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .index__online__content {
+    img {
+      object-position: 0% 25%;
+
+    }
+
+    .wrap .btn {
+      font-style: 14px;
+
+      @include pad {
+        font-size: 16px;
+      }
+    }
+
+    .viewDetailsBtn {
+      font-size: 16px;
+
+      @include pad {
+        font-size: 20px;
+      }
+
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+
+.index__albumsCards {
+  img{
+    transition: all .3s ease-in-out;
+  }
+  a:hover{
+    img{
+      transform: scale(1.2);
+    }
+    h3{
+      color:#9C9E18;
+    }
+  }
+  
+  .card {
+    position: relative;
+    h3 {
+      font-size: 18px;
+    }
+
+  }
+  .card--rotate--clockWise{
+    transform: rotate(2deg);
+    
+  }
+  .card--rotate--counterClockWise{
+    transform: rotate((-2deg));
+  }
+}
+
+
+.index__followUs{
+  /*.card */
+  .card-header{
+    h2{
+      font-size: 24px;
+      @include desktop{
+        font-size: 36px;
+      }
+    }
+  }
 }
