@@ -19,6 +19,7 @@
 
 
 header {
+  background-color: #EAE9E2;
   nav{
     // 為了調整出固定的nav下方黑色線條,在下方collapse(<992才會出現)沒有出現的時候，header的border-bottom 3px會跟nav的outline重疊
     outline: 3px solid $primary;

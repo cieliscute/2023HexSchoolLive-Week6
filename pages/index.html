@@ -13,6 +13,8 @@
 </head>
 
 <body>
+  
+  <%- include('./layout/registerModal'); -%>
   <!-- header -->
   <%- include('./layout/header'); -%>
     <!-- 中間主要區塊main -->
@@ -180,7 +182,7 @@
                     <img src="../assets/images/sparkler.png" alt="" class="">
                     <p class="mb-0 ms-1 fw-bold">社群活動</p>
                   </a>
-                  <a href="#" class="d-flex card-footer__state align-items-center">
+                  <a href="#" class="d-flex card-footer__state align-items-center" data-bs-toggle="modal" data-bs-target="#registerModal">
                     <p class="mb-0 me-1 fw-bold">開賣中</p>
                     <i class="fa-solid fa-angles-right"></i>
                   </a>
@@ -525,7 +527,7 @@
             <div class="col-12 col-lg-6">
               <div class="wrap wrap2 h-100 mt-4 mt-lg-0 d-flex flex-column">
                 <div class="card bg-transparent rounded-0 border-0">
-                  <div class="card-header bg-transparent rounded-0 py-3 ps-3 px-lg-32 notoSerif">
+                  <div class="card-header bg-transparent rounded-0 py-3 ps-3 px-lg-32 notoSerif border-0">
                     <h2 class="mb-0 fw-bold pe-none">#SUBSCRIBE US</h2>
                   </div>
                   <div class="card-body border-top border-2 border-primary pt-3 pt-12 p-lg-32 pb-lg-0 notoSans">
