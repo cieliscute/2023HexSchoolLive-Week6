@@ -11,6 +11,7 @@
 
 
 @import './utils/layout';
+@import './pages/layout/registerModal';
 @import './pages/layout/header';
 @import './pages/layout/footer';
 
@@ -18,7 +19,7 @@
 
 
 @import './pages/index.scss';
-
+@import './pages/events';
 * {
   // outline: 1px solid red;
 }

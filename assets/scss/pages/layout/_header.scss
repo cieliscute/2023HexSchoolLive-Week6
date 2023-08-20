@@ -1,3 +1,14 @@
+// header因為下了fix-top,所以body需要將上方的header區塊空出來，避免蓋到下方的頁面
+// 有考慮過其他的方式去推擠出這個距離，最後覺得還是body比較單純一點
+// 但是不知道這樣是不是一個好的辦法，助教如果對這部分有什麼看法也可以跟我說～～
+body{
+  padding-top: 72px;
+  @include pad{
+    padding-top: 87px;
+  }
+}
+
+
 // header icon大小
 .brand-img{
   width: 40px;
@@ -5,6 +16,14 @@
   @include pad{
     width: 55px;
     height: 55px;
+  }
+  img{
+    width: 25px;
+    height: 25px;
+    @include pad{
+      width: 35px;
+      height: 35px;
+    }
   }
 }
 .collapse--showAboveLg{
@@ -19,6 +38,7 @@
 
 
 header {
+  // for fixed-top
   background-color: #EAE9E2;
   nav{
     // 為了調整出固定的nav下方黑色線條,在下方collapse(<992才會出現)沒有出現的時候，header的border-bottom 3px會跟nav的outline重疊

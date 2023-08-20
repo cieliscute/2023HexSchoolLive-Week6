@@ -53,6 +53,7 @@
 
 .index__filters {
   .l-square__content {
+    transition: top .1s linear;
     img {
       width: 40px;
       height: 40px;
@@ -79,7 +80,7 @@
 
     &:hover {
       @include desktop {
-        top: -5px;
+        top: -10px;
       }
     }
   }
