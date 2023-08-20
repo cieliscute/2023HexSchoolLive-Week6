@@ -8,7 +8,7 @@
       font-size: 32px;
     }
 
-    @include desktop {
+    @include lg {
       top: 48px;
       left: 48;
 
@@ -27,7 +27,7 @@
       font-size: 18px;
     }
 
-    @include desktop {
+    @include lg {
       h4 {
         font-size: 24px;
       }
@@ -37,7 +37,7 @@
   .carousel-control-prev {
     width: 40px;
 
-    @include pad {
+    @include md {
       width: 112px;
     }
   }
@@ -45,7 +45,7 @@
   .carousel-control-next {
     width: 40px;
 
-    @include pad {
+    @include md {
       width: 112px;
     }
   }
@@ -59,19 +59,19 @@
       height: 40px;
       margin-bottom: 8px;
 
-      @include phone {
+      @include sm {
         width: 35px;
         height: 35px;
         margin-bottom: 4px;
       }
 
-      @include pad {
+      @include md {
         width: 50px;
         height: 50px;
         margin-bottom: 8px;
       }
 
-      @include desktop {
+      @include lg {
         width: 80px;
         height: 80px;
         margin-bottom: 12px;
@@ -79,7 +79,7 @@
     }
 
     &:hover {
-      @include desktop {
+      @include lg {
         top: -10px;
       }
     }
@@ -90,7 +90,7 @@
     color: $secondary;
     font-style: 24px;
 
-    @include desktop {
+    @include lg {
       font-size: 36px;
     }
   }
@@ -108,7 +108,7 @@
       font-weight: bold;
     }
 
-    @include desktop {
+    @include lg {
       h2 {
         font-size: 64px;
       }
@@ -124,11 +124,11 @@
     h3 {
       font-size: 32px;
 
-      @include pad {
+      @include md {
         font-size: 40px;
       }
 
-      @include respond-to('min-width:1200px') {
+      @include xl{
         font-size: 48px;
       }
     }
@@ -144,7 +144,7 @@
     h4 {
       font-style: 18px;
 
-      @include pad {
+      @include md {
         font-size: 24px;
       }
     }
@@ -155,7 +155,7 @@
       width: 20px;
       height: 20px;
 
-      @include desktop {
+      @include lg {
         width: 24px;
         height: 24px;
       }
@@ -221,7 +221,7 @@
       font-weight: bold;
     }
 
-    @include desktop {
+    @include lg {
       h2 {
         font-size: 64px;
       }
@@ -241,7 +241,7 @@
     .wrap .btn {
       font-style: 14px;
 
-      @include pad {
+      @include  md{
         font-size: 16px;
       }
     }
@@ -249,7 +249,7 @@
     .viewDetailsBtn {
       font-size: 16px;
 
-      @include pad {
+      @include md {
         font-size: 20px;
       }
 
@@ -309,13 +309,13 @@
   }
   .wrap1{
     border-width: 2px;
-    @include desktop{
+    @include lg{
       border-width: 2px 1px 2px 2px;
     }
   }
   .wrap2{
     border-width: 2px;
-    @include desktop{
+    @include lg{
       border-width: 2px 2px 2px 1px;
     }
   }
@@ -323,7 +323,7 @@
     h2 {
       font-size: 24px;
 
-      @include desktop {
+      @include lg {
         font-size: 36px;
       }
     }
@@ -371,7 +371,7 @@
 .index__slogan{
   h3{
     font-size: 18px;
-    @include pad{
+    @include md{
       font-size: 32px;
     }
   }

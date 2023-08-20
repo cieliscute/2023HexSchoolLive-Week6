@@ -9,7 +9,7 @@
       font-weight: bold;
     }
 
-    @include desktop {
+    @include lg {
       h2 {
         font-size: 64px;
       }
@@ -25,7 +25,7 @@
   .events__cards {
     .row{
       row-gap: 24px;
-      @include pad{
+      @include md{
         row-gap: 48px;
       }
     }
@@ -63,11 +63,11 @@
       h3 {
         font-size: 32px;
 
-        @include pad {
+        @include md {
           font-size: 40px;
         }
 
-        @include respond-to('min-width:1200px') {
+        @include xl{
           font-size: 48px;
         }
       }
@@ -83,7 +83,7 @@
       h4 {
         font-style: 18px;
 
-        @include pad {
+        @include md {
           font-size: 24px;
         }
       }
@@ -94,7 +94,7 @@
         width: 20px;
         height: 20px;
 
-        @include desktop {
+        @include lg {
           width: 24px;
           height: 24px;
         }

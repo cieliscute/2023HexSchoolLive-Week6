@@ -1,0 +1,14 @@
+.event-9{
+  .banner__date{
+    .banner__date__YYYY{
+      font-size: 24px;
+      @include md{
+        font-size: 48px;
+      }
+    }
+    .banner__date__MMDDhhmm{
+
+      
+    }
+  }
+}

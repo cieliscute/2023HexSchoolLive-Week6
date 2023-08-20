@@ -3,7 +3,7 @@
 // 但是不知道這樣是不是一個好的辦法，助教如果對這部分有什麼看法也可以跟我說～～
 body{
   padding-top: 72px;
-  @include pad{
+  @include md{
     padding-top: 87px;
   }
 }
@@ -13,14 +13,14 @@ body{
 .brand-img{
   width: 40px;
   height: 40px;
-  @include pad{
+  @include md{
     width: 55px;
     height: 55px;
   }
   img{
     width: 25px;
     height: 25px;
-    @include pad{
+    @include md{
       width: 35px;
       height: 35px;
     }
@@ -59,7 +59,7 @@ header {
         color: $primary;
       }
     }
-    @include pad{
+    @include md{
       .btn{
         width: 55px;
         height: 55px;
