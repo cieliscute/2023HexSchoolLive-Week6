@@ -10,18 +10,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script type="module" crossorigin src="/2023HexSchoolLive-Week6/assets/index-a44b8910.js"></script>
-  <link rel="stylesheet" href="/2023HexSchoolLive-Week6/assets/index-99bee84e.css">
+  <script type="module" crossorigin src="/2023HexSchoolLive-Week6/assets/main-24a917f5.js"></script>
+  <link rel="stylesheet" href="/2023HexSchoolLive-Week6/assets/main-5d8e3905.css">
 </head>
 
 <body>
-  <!-- header -->
-  <header class="border-bottom border-3 border-primary">
+  <!-- 註冊的Modal,一定要include到需要的頁面才可以使用！ -->
+<div class="registerModal modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content border border-3 border-primary rounded-0">
+      <div class="modal-header border-0 border-bottom border-primary border-3 py-3 position-relative">
+        <h2 class="modal-title w-100 text-center" id="exampleModalLabel">立刻成為7TAO會員</h2>
+        <button type="button" class="btn-close end-0 position-absolute me-12 me-md-4" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-stretch py-32 py-md-5">
+        <div class="notoSans text-center">
+          <p class="mb-0">立刻成為七逃會員，加速活動報名流程並取得活動優惠資訊。</p>
+          <p class="mb-0">您也可以先報名活動，日後再註冊帳號，</p>
+          <p class="mb-0">系統會在認證您的Email後，協助您找回舊的訂單。</p>
+        </div>
+        <div class="btn rounded-0 m-auto fw-bold notoSans py-2 px-32 mt-32 mt-md-4">立即成為會員</div>
+      </div>
+    </div>
+  </div>
+</div>  <!-- header -->
+  <!-- header一定要在body最前面就引入，使用fix-top定位在畫面最上方，並且對body下一個padding-top去製造出header在一開始最上方的空間（in _header.scss） -->
+<header class="border-bottom border-3 border-primary fixed-top">
   <nav class="navbar navbar-expand-lg navbar-light py-3">
     <div class="container-md justify-content-start flex-nowrap">
       <!-- brand icon+標題 -->
-      <a class="navbar-brand d-flex align-items-center py-0 me-lg-5 me-4" href="#">
-        <div class="brand-img border border-2 border-primary bg-secondary p-12 me-sm-3 me-0">
+      <a class="navbar-brand d-flex align-items-center py-0 me-lg-5 me-4" href="../pages/index.html">
+        <div class="brand-img border border-2 border-primary bg-secondary  d-flex align-items-center justify-content-center me-sm-3 me-0">
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAABZWlDQ1BEaXNwbGF5IFAzAAB4nHWQvUvDUBTFT6tS0DqIDh0cMolD1NIKdnFoKxRFMFQFq1OafgltfCQpUnETVyn4H1jBWXCwiFRwcXAQRAcR3Zw6KbhoeN6XVNoi3sfl/Ticc7lcwBtQGSv2AijplpFMxKS11Lrke4OHnlOqZrKooiwK/v276/PR9d5PiFlNu3YQ2U9cl84ul3aeAlN//V3Vn8maGv3f1EGNGRbgkYmVbYsJ3iUeMWgp4qrgvMvHgtMunzuelWSc+JZY0gpqhrhJLKc79HwHl4plrbWD2N6f1VeXxRzqUcxhEyYYilBRgQQF4X/8044/ji1yV2BQLo8CLMpESRETssTz0KFhEjJxCEHqkLhz634PrfvJbW3vFZhtcM4v2tpCAzidoZPV29p4BBgaAG7qTDVUR+qh9uZywPsJMJgChu8os2HmwiF3e38M6Hvh/GMM8B0CdpXzryPO7RqFn4Er/QfBIQM2AAAD60lEQVR4Ae2c/W3bMBDFzx8B8keAaoNyg7gbuJMkm7QbpBtlhKQTRJ4gSoAABvLh3nNJlaYpmbJl90nRDxAk25RkPt4dyaNskQF6MrtRMBYSptPp7OzszAgJNMKsViuju5mQMBUSRqORUXFoXIlGGBXlUneFkEAjjJLBaoQEJosxMrDNZDJZYRMSWHol4w7Oz8+NEEAhjI5hjDt+f3+n6JloxjGOj48PIwRQCOMH3vF4PFiMI+imB2FisIx+6VxJj78KASwW80XIYBGmdB+WaQFdjJE+Bt9MkT0IYkzja9j7tipoq8IURYFR7J1m4k6ScIIgOu758fz8fCtEKYsoKsxPTAZ1fyOJregmkHZ7TDlHrz/Xsg8451QNcSiZ+8LYp0wKA2FqZ9jWSm5cWRXol3QF25plRWHudeVThYHInuhr4YVoZSEJtKRfWetaMbKIMFuVhbvAzYJyRjpIFrQuLOcu4lomFCYso+9dhWUQy6TDmLCVI3GnVpgKUboTV6qwLrCqEadSmNi5GA5IX9AKXdeIExXGBtota5OOxpVKYuIg5uhHMauYh/Gpl6I4Yj1L4tZfUTxMxBoqNxtTjJyYkRwZjFSXy+XGuOTt7Q3r1Lcp56u7fVOBNuZBGn8KIEckSRgEQixr2Ax+hhkwktZets0tyK8F0JzKSZ910Xvn9r65fQuiFfp64T53n6kF5tpQ+a5rroVBq768vBit+EwvcIlK6oaJGdV6cpt4YkHA3+71xcXFPaxxnXaAVXp5kCf5KwhOkL6CulnLhnU5Sy89NNmVEBdwjKSSsyLrSr7bmGB/Cgq7rSum3wnHuX29UC9AA6/LqPvniFfJrnRkMhV2I97YeJU0gtVKfUdc8N/TipVi9AZYH7rgJmMYloX+oxHJp6Ruj13J0jWmQhSMaOehEBAB04WIQFfSJypEQW7XSPXsusq6+iNOLKbIv0dX6/IxUXF64VZ+4tqr2LVXZFcGL2ptnQ7ISILvEAXsTG2iTCTmdC8RDmxcCWNKzAWSkuGgQYKdE8y9JtvLHKaqfESYStyCnifOXLpCZEGs1uSbCGPx4043XMpLYD+ktuZke70ohcy5VieWUhAk7RdNbkU9J3S7Jsxslo/aavZKUB0ojH/v1mj7twT7znjL87ws3N7XaAOWx1npUggsj5ot3IEmmp6EAMZn8JIeHDo2LK6Ue8cLIWCIMRVQCIOEtTs+oFdqFZYYUwrjFs/+NxTCYFlDyKAQ5vX1tbSYcKnk09NwAnl0mH5enDMtCTP9IL1g6rZpRr72iQOK6QBg+tOLcjGeAaYYc6/dtrAwERK0m4Y4Sx0F5zKwwUkfTxvYkz+/TyEL+6WthwAAAABJRU5ErkJggg==" alt="7TAO LOGO" class="d-inline-block align-top img-fluid">
         </div>
         <div class="align-items-center d-none d-sm-flex">
@@ -203,7 +222,7 @@
               </a>
             </div>
             <div class="col-4 col-sm-2">
-              <a href="#">
+              <a href="./events.html">
                 <div class="l-square">
                   <div
                     class="border border-2 border-primary l-square__content d-flex align-items-center justify-content-center flex-column searchMore">
@@ -249,7 +268,7 @@
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAACXBIWXMAAAsTAAALEwEAmpwYAAABZWlDQ1BEaXNwbGF5IFAzAAB4nHWQvUvDUBTFT6tS0DqIDh0cMolD1NIKdnFoKxRFMFQFq1OafgltfCQpUnETVyn4H1jBWXCwiFRwcXAQRAcR3Zw6KbhoeN6XVNoi3sfl/Ticc7lcwBtQGSv2AijplpFMxKS11Lrke4OHnlOqZrKooiwK/v276/PR9d5PiFlNu3YQ2U9cl84ul3aeAlN//V3Vn8maGv3f1EGNGRbgkYmVbYsJ3iUeMWgp4qrgvMvHgtMunzuelWSc+JZY0gpqhrhJLKc79HwHl4plrbWD2N6f1VeXxRzqUcxhEyYYilBRgQQF4X/8044/ji1yV2BQLo8CLMpESRETssTz0KFhEjJxCEHqkLhz634PrfvJbW3vFZhtcM4v2tpCAzidoZPV29p4BBgaAG7qTDVUR+qh9uZywPsJMJgChu8os2HmwiF3e38M6Hvh/GMM8B0CdpXzryPO7RqFn4Er/QfBIQM2AAAD60lEQVR4Ae2c/W3bMBDFzx8B8keAaoNyg7gbuJMkm7QbpBtlhKQTRJ4gSoAABvLh3nNJlaYpmbJl90nRDxAk25RkPt4dyaNskQF6MrtRMBYSptPp7OzszAgJNMKsViuju5mQMBUSRqORUXFoXIlGGBXlUneFkEAjjJLBaoQEJosxMrDNZDJZYRMSWHol4w7Oz8+NEEAhjI5hjDt+f3+n6JloxjGOj48PIwRQCOMH3vF4PFiMI+imB2FisIx+6VxJj78KASwW80XIYBGmdB+WaQFdjJE+Bt9MkT0IYkzja9j7tipoq8IURYFR7J1m4k6ScIIgOu758fz8fCtEKYsoKsxPTAZ1fyOJregmkHZ7TDlHrz/Xsg8451QNcSiZ+8LYp0wKA2FqZ9jWSm5cWRXol3QF25plRWHudeVThYHInuhr4YVoZSEJtKRfWetaMbKIMFuVhbvAzYJyRjpIFrQuLOcu4lomFCYso+9dhWUQy6TDmLCVI3GnVpgKUboTV6qwLrCqEadSmNi5GA5IX9AKXdeIExXGBtota5OOxpVKYuIg5uhHMauYh/Gpl6I4Yj1L4tZfUTxMxBoqNxtTjJyYkRwZjFSXy+XGuOTt7Q3r1Lcp56u7fVOBNuZBGn8KIEckSRgEQixr2Ax+hhkwktZets0tyK8F0JzKSZ910Xvn9r65fQuiFfp64T53n6kF5tpQ+a5rroVBq768vBit+EwvcIlK6oaJGdV6cpt4YkHA3+71xcXFPaxxnXaAVXp5kCf5KwhOkL6CulnLhnU5Sy89NNmVEBdwjKSSsyLrSr7bmGB/Cgq7rSum3wnHuX29UC9AA6/LqPvniFfJrnRkMhV2I97YeJU0gtVKfUdc8N/TipVi9AZYH7rgJmMYloX+oxHJp6Ruj13J0jWmQhSMaOehEBAB04WIQFfSJypEQW7XSPXsusq6+iNOLKbIv0dX6/IxUXF64VZ+4tqr2LVXZFcGL2ptnQ7ISILvEAXsTG2iTCTmdC8RDmxcCWNKzAWSkuGgQYKdE8y9JtvLHKaqfESYStyCnifOXLpCZEGs1uSbCGPx4043XMpLYD+ktuZke70ohcy5VieWUhAk7RdNbkU9J3S7Jsxslo/aavZKUB0ojH/v1mj7twT7znjL87ws3N7XaAOWx1npUggsj5ot3IEmmp6EAMZn8JIeHDo2LK6Ue8cLIWCIMRVQCIOEtTs+oFdqFZYYUwrjFs/+NxTCYFlDyKAQ5vX1tbSYcKnk09NwAnl0mH5enDMtCTP9IL1g6rZpRr72iQOK6QBg+tOLcjGeAaYYc6/dtrAwERK0m4Y4Sx0F5zKwwUkfTxvYkz+/TyEL+6WthwAAAABJRU5ErkJggg==" alt="" class="">
                     <p class="mb-0 ms-1 fw-bold">社群活動</p>
                   </a>
-                  <a href="#" class="d-flex card-footer__state align-items-center">
+                  <a href="#" class="d-flex card-footer__state align-items-center" data-bs-toggle="modal" data-bs-target="#registerModal">
                     <p class="mb-0 me-1 fw-bold">開賣中</p>
                     <i class="fa-solid fa-angles-right"></i>
                   </a>
@@ -594,7 +613,7 @@
             <div class="col-12 col-lg-6">
               <div class="wrap wrap2 h-100 mt-4 mt-lg-0 d-flex flex-column">
                 <div class="card bg-transparent rounded-0 border-0">
-                  <div class="card-header bg-transparent rounded-0 py-3 ps-3 px-lg-32 notoSerif">
+                  <div class="card-header bg-transparent rounded-0 py-3 ps-3 px-lg-32 notoSerif border-0">
                     <h2 class="mb-0 fw-bold pe-none">#SUBSCRIBE US</h2>
                   </div>
                   <div class="card-body border-top border-2 border-primary pt-3 pt-12 p-lg-32 pb-lg-0 notoSans">
@@ -659,8 +678,6 @@
         subscribeBtn.addEventListener('mouseleave', function () {
           this.lastElementChild.classList.remove('fa-beat-fade');
         })
-
-
       </script>
 </body>
 
