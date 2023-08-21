@@ -1,14 +1,59 @@
-.event-9{
-  .banner__date{
-    .banner__date__YYYY{
-      font-size: 24px;
-      @include md{
-        font-size: 48px;
+.event-9 {
+  .banner {
+    .border {
+      --bs-border-width: 2px;
+
+      @include sm {
+        --bs-border-width: 3px;
       }
     }
-    .banner__date__MMDDhhmm{
+  }
 
-      
+  .banner__date__YYYY {
+    font-size: 24px;
+
+    @include lg {
+      font-size: 48px;
+    }
+  }
+
+  .banner__date__MMDDhhmm {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 50px;
+      height: 2px;
+      background-color: #000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(120deg);
+      @include sm{
+        width: 35px;
+      }
+    }
+  }
+
+  .banner__date__MMDD {
+    font-size: 22px;
+
+    @include sm {
+      font-size: 16px;
+    }
+    @include md{
+      font-size: 22px;
+    }
+  }
+
+  .banner__date__hhmm {
+    font-size: 16px;
+
+    @include sm {
+      font-size: 12px;
+    }
+    @include md {
+      font-size: 16px;
     }
   }
 }

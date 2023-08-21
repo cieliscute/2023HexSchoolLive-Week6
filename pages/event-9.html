@@ -16,21 +16,31 @@
   <!-- header -->
   <%- include('./layout/header'); -%>
   <main>
-    <section class="banner mt-30">
+    <section class="banner mt-3 mt-sm-30">
       <div class="container-md">
         <div class="row">
           <div class="banner__image col-12 col-sm-10">
-            <div class="p-12 p-md-4 border border-3 border-primary">
+            <div class="p-12 p-md-4 border border-primary">
               <img src="../assets/images/event/fig_event09.png" alt="" class="img-fluid">
             </div>
           </div>
           <div class="banner__date col-12 col-sm-2 mt-2 mt-sm-0">
-            <div class="row h-100 flex-md-column">
-              <div class="col-4 col-sm-12">
-                <p class="banner__date__YYYY mb-0 border border-2 border-primary border-3 d-flex justify-content-center align-items-center py-4 py-md-32">2023</p>
+            <div class="row h-100 flex-sm-column">
+              <div class="col-4 col-sm-12 mb-0 mb-sm-3 mb-md-4">
+                <p class="banner__date__YYYY mb-0 lh-sm border  border-primary d-flex justify-content-center align-items-center py-4 py-sm-2 py-md-3 py-lg-32 h-100">2023</p>
               </div>
-              <div class="col-8 col-sm-12 flex-md-grow-1">
-                <p class="banner__date__MMDDhhmm p-3 mb-0 border border-2 border-primary border-3 h-100">MAY19</p>
+              <div class="col-8 col-sm-12 flex-sm-grow-1">
+                <div class="banner__date__MMDDhhmm mb-0 border  border-primary h-100 py-12 py-sm-3 py-lg-5 px-4 px-sm-0 d-flex  justify-content-between align-items-center flex-sm-column">
+                  <div class="banner__date__MMDD text-center">
+                    <p class="banner__date__MM mb-0">MAY</p>
+                    <p class="banner__date__DD mb-0">19</p>
+                  </div>
+                  <div class="banner__date__hhmm d-flex flex-column align-items-center">
+                    <p class="banner__date__hh mb-0">12:00</p>
+                    <p class="mb-0">|</p>
+                    <p class="banner__date__mm mb-0">20:00</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
