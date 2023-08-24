@@ -57,6 +57,8 @@
 
 
 
+// base
+@import './base/base';
 
 // ejs
 @import './pages/layout/registerModal';
@@ -67,8 +69,12 @@
 @import './pages/index.scss';
 @import './pages/events';
 @import './pages/event-9';
+@import './pages/payment';
+@import './pages/login';
+
+
 * {
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }
 
 img[alt=""] {

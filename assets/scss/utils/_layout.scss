@@ -19,10 +19,48 @@
 }
 
 
-
-
-.l-gapY-8{
+.l-gapY-8 {
   gap: 8px 0px;
+}
+
+
+.l-label {
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  @include lg {
+    h2 {
+      font-size: 64px;
+    }
+
+    p {
+      font-size: 32px;
+    }
+  }
+}
+
+.l-z-index-1{
+  z-index: 1;
+}
+.l-z-index-2{
+  z-index: 2;
+}
+.l-z-index-minus1{
+  z-index: -1;
+}
+.l-start-minus50{
+  left: -50%;
+}
+
+
+.l-bg-body{
+  background-color: #EAE9E2;
 }
 
 .l-square {
@@ -111,7 +149,8 @@
   }
 }
 
-.l-card__tag--offsetPosition{
+// 首頁卡片使用的
+.l-card__tag--offsetPosition {
   z-index: 1;
   transform: translate(-50%, -50%) rotate(-4deg);
 }
@@ -123,13 +162,14 @@
 
   p {
     font-weight: bold;
-  font-family: 'Noto Serif TC';
-  letter-spacing: 1.6px;
+    font-family: 'Noto Serif TC';
+    letter-spacing: 1.6px;
     display: flex;
     text-transform: uppercase;
     // word-spacing: 3rem;
     animation: scroll 40s linear infinite;
     font-size: 16px;
+
     @include md {
       font-size: 32px;
       letter-spacing: 3.2px;

@@ -13,7 +13,10 @@ $link-decoration: none !default;
 $primary: #030303 !default;
 $secondary: #FBFF22 !default;
 $tertiary: #C96464 !default;
+
+
 $theme-colors();
+$info: #4f4f4f !default;
 
 
 
@@ -316,7 +319,7 @@ $primary: #030303 !default;
 $secondary: #FBFF22 !default;
 $tertiary: #C96464 !default;
 $success: $green !default;
-$info: $cyan !default;
+$info: #4f4f4f !default;
 $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
@@ -399,6 +402,7 @@ $spacers: (
   32:$spacer *2,
   40:$spacer *2.5,
   60:$spacer *3.75,
+  80:$spacer *5
   ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -599,6 +603,7 @@ $font-sizes: (
   4: $h4-font-size,
   5: $h5-font-size,
   6: $h6-font-size,
+  14:0.875rem,
   18:1.125rem,
   60:3.75rem,
   ) !default;

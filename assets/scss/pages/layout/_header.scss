@@ -46,9 +46,14 @@ header {
   }
   form {
     // 如果要調整input裏面placeholder的css需要使用::placeholder
-    // .form-control::placeholder{
-    //   color:red
-    // }
+    .form-control::placeholder{
+      // 裝置320px的時候字體會被蓋掉一些，調小2px
+      font-size: 14px;
+      @include sm{
+        // 恢復原本尺寸
+        font-size: 16px;
+      }
+    }
     [type="submit"] {
       background-color: $primary;
       color: $secondary;

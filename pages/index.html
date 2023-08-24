@@ -12,13 +12,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="index">
+<body class="">
   <!-- 註冊Modal -->
   <%- include('./layout/registerModal'); -%>
   <!-- header -->
   <%- include('./layout/header'); -%>
     <!-- 中間主要區塊main -->
-    <main>
+    <main class="index">
       <!-- banner carousel -->
       <section class="index__banner mt-32">
         <div class="container-md">
@@ -154,9 +154,9 @@
       <!-- Recent -->
       <section class="index__recent mt-32 mt-md-5">
         <!-- Recent__標題 -->
-        <div class="index__recent__title container-md">
+        <div class="container-md">
           <div
-            class="d-flex justify-content-between align-items-center py-3 px-12 py-md-4 px-md-32 border border-3 border-primary pe-none">
+            class="l-label d-flex justify-content-between align-items-center py-3 px-12 py-md-4 px-md-32 border border-3 border-primary pe-none">
             <h2 class="mb-0">RECENT</h2>
             <p class="mb-0">近期活動</p>
           </div>
@@ -322,9 +322,9 @@
       <!-- Online -->
       <section class="index__online mt32 mt-md-60">
         <!-- Online__標題-->
-        <div class="index__online__title container-md">
+        <div class="container-md">
           <div
-            class="d-flex justify-content-between align-items-center py-3 px-12 py-md-4 px-md-32 border border-3 border-primary pe-none">
+            class="l-label d-flex justify-content-between align-items-center py-3 px-12 py-md-4 px-md-32 border border-3 border-primary pe-none">
             <h2 class="mb-0">ONLINE</h2>
             <p class="mb-0">線上活動</p>
           </div>

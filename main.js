@@ -22,3 +22,9 @@ subscribeBtn.addEventListener('mouseover', function () {
 subscribeBtn.addEventListener('mouseleave', function () {
   this.lastElementChild.classList.remove('fa-beat-fade');
 })
+let tests=document.querySelectorAll('.fa-angles-right');
+tests.forEach((item)=>{
+  item.parentElement.addEventListener('mouseover',function(e){
+    console.log(this.children);
+  })
+})

@@ -98,27 +98,6 @@
 
 
 .index__recent {
-  .index__recent__title {
-    h2 {
-      font-size: 24px;
-    }
-
-    p {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    @include lg {
-      h2 {
-        font-size: 64px;
-      }
-
-      p {
-        font-size: 32px;
-      }
-    }
-  }
-
   /*.index__recent__cards .card START */
   .card-header {
     h3 {
@@ -211,27 +190,6 @@
 }
 
 .index__online {
-  .index__online__title {
-    h2 {
-      font-size: 24px;
-    }
-
-    p {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    @include lg {
-      h2 {
-        font-size: 64px;
-      }
-
-      p {
-        font-size: 32px;
-      }
-    }
-  }
-
   .index__online__content {
     img {
       object-position: 0% 25%;
